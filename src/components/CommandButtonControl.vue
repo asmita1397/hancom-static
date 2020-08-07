@@ -6,21 +6,21 @@
     </div>
     <table class="table">
       <tr>
-        <td>(Name)</td>
+        <td class="lefttd">(Name)</td>
         <td>
-          <input type="text" :value="selectedUserForm.name"   @input="handleChangeInput($event,'name')"/>
+          <input type="text" :value="controlData.Name"  />
         </td>
       </tr>
       <tr>
         <td>Accelerator</td>
         <td>
-          <input type="text" :value="selectedUserForm.accelerator"  @input="handleChangeInput($event,'accelerator')"/>
+          <input type="text" :value="controlData.Accelerator" />
         </td>
       </tr>
       <tr>
         <td>AutoSize</td>
         <td>
-          <select :value="selectedUserForm.autoSize" @change="handleChangeInput($event,'autoSize')">
+          <select :value="controlData.AutoSize" >
             <option selected :value="false">False</option>
             <option :value="true">True</option>
           </select>
@@ -29,33 +29,33 @@
       <tr>
         <td>BackColor</td>
         <td>
-          <select :value="selectedUserForm.backColor"  @change="changeInput($event,'backColor')">
+          <select :value="controlData.BackColor"  >
             <option v-for="(item,key) in backColor" :key="key" :value="item">{{key}}</option>
           </select>
         </td>
       </tr>
       <tr>
         <td>BackStyle</td>
-        <select :value="selectedUserForm.backColor"  @change="changeInput($event,'backColor')">
+        <select :value="controlData.BackStyle"  >
           <option v-for="(item,key) in backStyle" :key="key" :value="item">{{key}}</option>
         </select>
       </tr>
       <tr>
         <td>Caption</td>
         <td>
-          <input type="text" :value="selectedUserForm.caption"   @input="handleChangeInput($event,'caption')"/>
+          <input type="text" :value="controlData.Caption"  />
         </td>
       </tr>
       <tr>
         <td>ControlTipText</td>
         <td>
-          <input type="text" :value="selectedUserForm.title"  @input="handleChangeInput($event,'title')"/>
+          <input type="text" :value="controlData.ControlTipText" />
         </td>
       </tr>
       <tr>
         <td>Default</td>
         <td>
-          <select :value="selectedUserForm.default" @change="handleChangeInput($event,'default')">
+          <select :value="controlData.Default" >
             <option selected>true</option>
             <option>false</option>
           </select>
@@ -64,7 +64,7 @@
       <tr>
         <td>Enabled</td>
         <td>
-          <select :value="selectedUserForm.enabled" @change="handleChangeInput($event,'enabled')">
+          <select :value="controlData.Enabled" >
             <option selected :value="true">True</option>
             <option :value="false">False</option>
           </select>
@@ -73,7 +73,7 @@
       <tr>
         <td>Font</td>
         <td>
-          <select :value="selectedUserForm.font" @change="changeInput($event,'font')">
+          <select :value="controlData.Font" >
             <option v-for="(value,key) in font" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -81,7 +81,7 @@
       <tr>
         <td>ForeColor</td>
         <td>
-          <select :value="selectedUserForm.foreColor" @change="changeInput($event,'foreColor')">
+          <select :value="controlData.ForeColor">
             <option v-for="(value,key) in foreColor" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -91,16 +91,15 @@
         <td>
           <input
             type="number"
-            :value="selectedUserForm.height | sizeFilter"
-            @change="validators.sizeValidateForControls($event,selectedUserForm,'height')"
-            @keyup.enter="validators.sizeValidateForControls($event,selectedUserForm,'height')"
+            :value="controlData.height"
+           
           />
         </td>
       </tr>
       <tr>
         <td>HelpContextId</td>
         <td>
-          <input type="number" :value="selectedUserForm.helpContextId"  @input="handleChangeInput($event,'helpContextId')"/>
+          <input type="number" :value="controlData.HelpContextId"  />
         </td>
       </tr>
       <tr>
@@ -108,16 +107,15 @@
         <td>
           <input
             type="number"
-            :value="selectedUserForm.left | sizeFilter"
-            @change="validators.sizeValidateForControls($event,selectedUserForm,'left')"
-            @keyup.enter="validators.sizeValidateForControls($event,selectedUserForm,'left')"
+            :value="controlData.Left"
+         
           />
         </td>
       </tr>
       <tr>
         <td>Locked</td>
         <td>
-          <select :value="selectedUserForm.locked" @change="handleChangeInput($event,'locked')">
+          <select :value="controlData.Locked" >
             <option selected>True</option>
             <option>False</option>
           </select>
@@ -132,7 +130,7 @@
       <tr>
         <td>MousePointer</td>
         <td>
-          <select :value="selectedUserForm.cursor" @change="changeInput($event,'cursor')">
+          <select :value="controlData.MousePointer">
             <option v-for="(value,key) in mousePointer" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -146,7 +144,7 @@
       <tr>
         <td>PicturePosition</td>
         <td>
-          <select :value="selectedUserForm.picturePosition" @change="handleChangeInput($event,'picturePosition')">
+          <select :value="controlData.PicturePosition">
             <option v-for="(value,key) in picturePosition" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -154,13 +152,13 @@
       <tr>
         <td>TabIndex</td>
         <td>
-          <input type="number" :value="selectedUserForm.tabindex"   @input="handleChangeInput($event,'tabindex')"/>
+          <input type="number" :value="controlData.TabIndex"  />
         </td>
       </tr>
       <tr>
         <td>TabStop</td>
         <td>
-          <select :value="selectedUserForm.tabStop" @change="handleChangeInput($event,'tabStop')">
+          <select :value="controlData.TabStop" >
             <option :value="false" selected>False</option>
             <option :value="true">True</option>
           </select>
@@ -169,13 +167,13 @@
       <tr>
         <td>Tag</td>
         <td>
-          <input type="text" :value="selectedUserForm.tag"  @input="handleChangeInput($event,'tag')" />
+          <input type="text" :value="controlData.Tag"   />
         </td>
       </tr>
       <tr>
         <td>TakeFocusOnClick</td>
         <td>
-          <select :value="selectedUserForm.takeFocusOnClick" @change="handleChangeInput($event,'takeFocusOnClick')">
+          <select :value="controlData.TakeFocusOnClick" >
             <option selected>True</option>
             <option>False</option>
           </select>
@@ -186,16 +184,14 @@
         <td>
           <input
             type="number"
-            :value="selectedUserForm.top | sizeFilter"
-            @change="validators.sizeValidateForControls($event,selectedUserForm,'top')"
-            @keyup.enter="validators.sizeValidateForControls($event,selectedUserForm,'top')"
+            :value="controlData.Top"
           />
         </td>
       </tr>
       <tr>
         <td>Visible</td>
         <td>
-          <select :value="selectedUserForm.visible" @change="handleChangeInput($event,'visible')">
+          <select :value="controlData.Visible">
             <option :value="false">False</option>
             <option :value="true" selected>True</option>
           </select>
@@ -206,16 +202,15 @@
         <td>
           <input
             type="number"
-            :value="selectedUserForm.width | sizeFilter"
-            @change="validators.sizeValidateForControls($event,selectedUserForm,'width')"
-            @keyup.enter="validators.sizeValidateForControls($event,selectedUserForm,'width')"
+            :value="controlData.Width"
+           
           />
         </td>
       </tr>
       <tr>
         <td>WordWrap</td>
         <td>
-          <select ::value="selectedUserForm.wordWrap" @change="handleChangeInput($event,'wordWrap')">
+          <select ::value="controlData.WordWrap" >
             <option selected :value="false">False</option>
             <option :value="true">True</option>
           </select>
@@ -236,7 +231,7 @@ import picturePosition from "../models/picturePosition.json";
 import specialEffect from "../models/specialEffect.json";
 import textAlign from "../models/textAlign.json";
 // import { validators } from "../validators/validator";
-import { Getter, Mutation } from "vuex-class";
+
 @Component({
   filters: {
     sizeFilter(value: any) {
@@ -245,7 +240,7 @@ import { Getter, Mutation } from "vuex-class";
   }
 })
 export default class UserFormTable extends Vue {
-  @Prop() selectedUserForm: any;
+  @Prop() controlData: any;
   // validators: object = validators;
 
   backColor: object = backColor;
@@ -256,40 +251,33 @@ export default class UserFormTable extends Vue {
   specialEffect: object = specialEffect;
   picturePosition: object = picturePosition;
   textAlign: object = textAlign;
-
-  /* @Getter selectedUserForm!: any; */
-  @Mutation updateControl!: any;
-  @Mutation updateControlStyle!: any;
-
-  handleChangeInput(e: any, styleName: string) {
-    console.log("inputd", e.target.value);
-    this.updateControl({ styleValue: e.target.value, styleName: styleName });
-  }
-  changeInput(e: any, styleName: string) {
-    this.updateControlStyle({
-      styleValue: e.target.value,
-      styleName: styleName
-    });
-  }
-
   
 }
 </script>
-
 <style scoped>
-table,
-td {
+.node {
+  text-align: left;
+}
+.table
+ {
   margin-right: 0%;
   width: 100%;
-  border: 1px solid black;
   border-collapse: collapse;
-  font-size: 11px;
-  padding: none;
   color: black;
-}
 
+}
+th,
 td {
   text-align: left;
+  width: fit-content;
+  position: relative;
+  border: 1px solid lightgray;
+    font-size: 12px;
+}
+th {
+  width: 120%;
+ 
+  font-family: Tahoma;
 }
 
 .form-control {
@@ -297,13 +285,30 @@ td {
   width: 280px;
   cursor: pointer;
   background-color: rgb(190, 185, 185);
-  /* border: 6px solid grey; */
+ font-size: 12px;
 }
 label {
   float: left;
 }
 select {
-  width: 100%;
+  width:100%;
+  /* padding: 1px 2px; */
+  border:none;
+}
+input {
+  width: 98%;
+  border:none
+}
+select:focus
+{
+  outline: none;
+}
+input:focus{
+  outline: none;
+}
+.button:focus{
+  outline: none;
+  background-color:white;
 }
 
 /* Must be added as style for the new data */
@@ -321,12 +326,15 @@ select {
 .btn-group .button {
   border: none;
   color: black;
-
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
   cursor: pointer;
-  /* float: left; */
+
 }
+.lefttd{
+  width: 130px;
+}
+</style>
 </style>

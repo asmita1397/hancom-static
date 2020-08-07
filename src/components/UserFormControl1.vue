@@ -1,18 +1,28 @@
 <template>
-  <div>
-    <UseCheckbox />
-    <UseSpinButton />
-  </div>
+  <div>        
+        
+     <UseLabel/>
+     <UseCommandButton/>
+     <UseTextBox/>
+     <UseCheckbox/>
+    
+    </div>
+ 
 </template>
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import UseLabel from "../views/controls/UseLabel.vue";
+import UseCommandButton  from '../views/controls/UseCommandButton.vue'
+import UseTextBox from "../views/controls/UseTextBox.vue";
 import UseCheckbox from "../views/controls/UseCheckbox.vue";
-import UseSpinButton from "../views/controls/UseSpinButton.vue";
 
 @Component({
   components: {
-    UseCheckbox,
-    UseSpinButton
+   UseCommandButton,
+   UseTextBox,
+   UseCheckbox,
+   UseLabel
+  
   }
 })
 export default class UserFormControl1 extends Vue {}

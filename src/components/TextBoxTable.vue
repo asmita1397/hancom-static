@@ -5,7 +5,7 @@
       <button class="button">Categorized</button>
     </div>
     <table class="table">
-      <tr>
+     <tr>
         <td class="lefttd">(Name)</td>
         <td>
           <input
@@ -14,20 +14,20 @@
           />
         </td>
       </tr>
-      <tr>
-        <td>Accelerator</td>
+       <tr>
+        <td>AutoTab</td>
         <td>
-          <input
-            type="text"
-            :value="controlData.Accelerator"
-          />
+          <select :value="controlData.AutoTab" >
+            <option :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
         </td>
       </tr>
       <tr>
-        <td>AutoSize</td>
+        <td>AutoWordSelect</td>
         <td>
-          <select v-model="controlData.AutoSize" >
-            <option selected :value="false">False</option>
+          <select :value="controlData.AutoWordSelect" >
+            <option :value="false">False</option>
             <option :value="true">True</option>
           </select>
         </td>
@@ -35,21 +35,30 @@
       <tr>
         <td>BackColor</td>
         <td>
-          <select :value="controlData.BackColor" >
+          <select
+            :value="controlData.BackColor"
+           
+          >
             <option v-for="(item,key) in backColor" :key="key" :value="item">{{key}}</option>
           </select>
         </td>
       </tr>
       <tr>
         <td>BackStyle</td>
-        <select :value="controlData.BackStyle" >
+        <select
+          :value="controlData.BackStyle"
+          
+        >
           <option v-for="(item,key) in backStyle" :key="key" :value="item">{{key}}</option>
         </select>
       </tr>
       <tr>
         <td>BorderColor</td>
         <td>
-          <select :value="controlData.BorderColor" >
+          <select
+            :value="controlData.BorderColor"
+            
+          >
             <option v-for="(item,key) in borderColor" :key="key" :value="item">{{key}}</option>
           </select>
         </td>
@@ -63,38 +72,74 @@
         </td>
       </tr>
       <tr>
-        <td>Caption</td>
+        <td>ControlSource</td>
         <td>
           <input
             type="text"
-            :value="controlData.Caption"
+            :value="controlData.ControlSource"
+           
           />
         </td>
       </tr>
-      <tr>
+     <tr>
         <td>ControlTipText</td>
         <td>
           <input
             type="text"
             :value="controlData.ControlTipText"
+           
           />
         </td>
       </tr>
       <tr>
+        <td>DragBehavior</td>
+        <td>
+          <select
+            :value="controlData.DragBehavior"
+            
+          >
+            <option selected :value="false">0 - fmDragBehaviorDisabled</option>
+            <option :value="true">1 - fmDragBehaviorEnabled</option>
+          </select>
+        </td>
+      </tr>
+       <tr>
         <td>Enabled</td>
         <td>
           <select
             v-model="controlData.Enabled"
+          
           >
-            <option selected :value="true">True</option>
+            <option :value="true">True</option>
             <option :value="false">False</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>EnterFieldBehavior</td>
+        <td>
+          <select :value="controlData.EnterFieldBehavior">
+            <option selected :value="false">0 - fmEnterFiledBehaviorSelectAll</option>
+            <option :value="true">1 - fmEnterFiledBehaviorRecallSelection</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>EnterKeyBehavior</td>
+        <td>
+          <select :value="controlData.EnterKeyBehavior">
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
           </select>
         </td>
       </tr>
       <tr>
         <td>Font</td>
         <td>
-          <select :value="controlData.Font">
+          <select
+            :value="controlData.Font"
+          
+          >
             <option v-for="(value,key) in font" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -112,7 +157,8 @@
         <td>
           <input
             type="number"
-            :value="controlData.Height"  
+            :value="controlData.Height"
+           
           />
         </td>
       </tr>
@@ -122,7 +168,35 @@
           <input
             type="number"
             :value="controlData.HelpContextId"
+           
           />
+        </td>
+      </tr>
+      <tr>
+        <td>HideSelection</td>
+        <td>
+          <select :value="controlData.HideSelection" >
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>IMEMode</td>
+        <td>
+          <select :value="controlData.IMEMode" >
+            <option selected value="0 - fmIMEModeNOControl">0 - fmIMEModeNOControl</option>
+           
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>IntegralHeight</td>
+        <td>
+          <select :value="controlData.IntegralHeight" >
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
         </td>
       </tr>
       <tr>
@@ -136,6 +210,25 @@
         </td>
       </tr>
       <tr>
+        <td>Locked</td>
+        <td>
+          <select :value="controlData.Locked" >
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
+        </td>
+      </tr>
+    <tr>
+        <td>MaxLength</td>
+        <td>
+          <input
+            type="number"
+            :value="controlData.MaxLength"
+           
+          />
+        </td>
+      </tr>
+      <tr>
         <td>MouseIcon</td>
         <td>
           <input type="file" />
@@ -144,24 +237,49 @@
       <tr>
         <td>MousePointer</td>
         <td>
-          <select :value="controlData.MousePointer">
+          <select :value="controlData.MousePointer" >
             <option v-for="(value,key) in mousePointer" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
       </tr>
       <tr>
-        <td>Picture</td>
+        <td>MultiLine</td>
         <td>
-          <input type="file" />
+          <select
+            :value="controlData.MultiLine"
+          >
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
         </td>
       </tr>
       <tr>
-        <td>PicturePosition</td>
+        <td>PasswordChar</td>
+        <td>
+          <input
+            type="text"
+            :value="controlData.PasswordChar"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>ScrollBars</td>
         <td>
           <select
-            :value="controlData.PicturePosition"
+            :value="controlData.ScrollBars"
           >
-            <option v-for="(value,key) in picturePosition" v-bind:value="value" :key="key">{{key}}</option>
+            <option v-for="(item,key) in scrollBars" :key="key" :value="item">{{key}}</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>SelectionMargin</td>
+        <td>
+          <select
+            :value="controlData.SelectionMargin"
+          >
+            <option :value="false" selected>False</option>
+            <option :value="true">True</option>
           </select>
         </td>
       </tr>
@@ -170,7 +288,6 @@
         <td>
           <select
             :value="controlData.SpecialEffect"
-
           >
             <option v-for="(value,key) in specialEffect" v-bind:value="value" :key="key">{{key}}</option>
           </select>
@@ -197,13 +314,30 @@
       <tr>
         <td>Tag</td>
         <td>
-          <input type="text" :value="controlData.Tag"  />
+          <input
+            type="text"
+            :value="controlData.Tag"
+            
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Text</td>
+        <td>
+          <input
+            type="text"
+            :value="controlData.Text"
+           
+          />
         </td>
       </tr>
       <tr>
         <td>TextAlign</td>
         <td>
-          <select :value="controlData.TextAlign" >
+          <select
+            :value="controlData.TextAlign"
+           
+          >
             <option v-for="(value,key) in textAlign" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
@@ -214,6 +348,15 @@
           <input
             type="number"
             :value="controlData.Top"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Value</td>
+        <td>
+          <input
+            type="text"
+            :value="controlData.Value"
            
           />
         </td>
@@ -221,7 +364,7 @@
       <tr>
         <td>Visible</td>
         <td>
-          <select :value="controlData.Visible">
+          <select :value="controlData.Visible" >
             <option :value="false">False</option>
             <option :value="true" selected>True</option>
           </select>
@@ -246,11 +389,13 @@
           </select>
         </td>
       </tr>
-    </table>
+    </table >
   </div>
 </template>
 
 <script lang="ts">
+/* eslint-disable */
+
 import { Component, Prop, Vue } from "vue-property-decorator";
 import backColor from "../models/backColor.json";
 import backStyle from "../models/backStyle.json";
@@ -262,40 +407,16 @@ import mousePointer from "../models/mousePointer.json";
 import picturePosition from "../models/picturePosition.json";
 import specialEffect from "../models/specialEffect.json";
 import textAlign from "../models/textAlign.json";
-/* import { validators } from "../validators/validator"; */
-import { Mutation, Getter } from "vuex-class";
+import { EventBus } from "./event-bus";
+import scrollBars from "../models/scrollBars.json";
+
 @Component({
-  filters: {
-    sizeFilter(value: any) {
-      return parseInt(value, 10);
-    }
-  }
-})
-export default class UserFormTable extends Vue {
-  @Prop() controlData: any;
-
- 
-  /* validators: object = validators; */
-  backColor: object = backColor;
-  borderColor: object = borderColor;
-  borderStyle: object = borderStyle;
-  backStyle: object = backStyle;
-  font: object = font;
-  foreColor: object = foreColor;
-  mousePointer: object = mousePointer;
-  specialEffect: object = specialEffect;
-  picturePosition: object = picturePosition;
-  textAlign: object = textAlign;
-
   
-  mounted() {
-    console.log();
-  }
-
+})
+export default class TextBoxTable extends Vue {
+  @Prop() controlData: any;
 }
 </script>
-
-
 
 <style scoped>
 .node {
@@ -379,5 +500,4 @@ input:focus{
 .lefttd{
   width: 130px;
 }
-</style>
 </style>

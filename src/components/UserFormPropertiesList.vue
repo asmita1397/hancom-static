@@ -19,11 +19,19 @@
         <option value="value2">value2</option>
       </select>
 
-      <!-- <UserFormTable v-if="userFormType==='userForm1'" :userFormData="data" />
+      <UserFormTable v-if="userFormType==='userForm1'" :userFormData="data" />
       <UserFormTable v-if="userFormType==='userForm2'" :userFormData="data" />
-      <UserFormTable v-if="userFormType==='userForm3'" :userFormData="data" /> -->
+      <UserFormTable v-if="userFormType==='userForm3'" :userFormData="data" /> 
+
+
+      <!-- <LabelControlTable :controlData="labelData"/> -->
+
+      <CommandButtonControl v-if="controlType==='commandButton1'" :controlData="commandButtonData" />
+       <TextBoxTable v-if="controlType==='inputBox1'" :controlData="TextboxData"/>
+       <CheckBoxControlTable v-if="controlType==='checkBox1'" :controlData="CheckBoxData" />
      
-      <LabelControlTable :controlData="labelData"/>
+       
+       
     </div>
   </div>
 </template>
@@ -34,9 +42,16 @@ import { EventBus } from "./event-bus";
 import UserFormTable from "./UserFormTable.vue";
 import { userFormData } from "../models/UserFormData";
 import { Label } from "../models/Label";
+import { CommandButton } from "../models/CommandButton";
+import { TextBox } from "../models/TextBox";
+import { CheckBox } from "../models/CheckBox";
 import LabelControlTable  from "./LabelControlTable.vue";
+import CommandButtonControl  from "./CommandButtonControl.vue";
+import TextBoxTable from "./TextBoxTable.vue";
+import CheckBoxControlTable from "./CheckBoxControlTable.vue";
+
 @Component({
-  components: { UserFormTable, LabelControlTable }
+  components: { UserFormTable, LabelControlTable,CommandButtonControl ,TextBoxTable, CheckBoxControlTable}
 })
 export default class UserFormPropertiesList extends Vue {
   noDisplay = false;
@@ -44,13 +59,24 @@ export default class UserFormPropertiesList extends Vue {
     this.noDisplay = true;
   }
   userFormType = "";
+  controlType = "";
   data = userFormData;
   labelData= Label;
+  commandButtonData= CommandButton;
+  TextboxData=TextBox;
+  CheckBoxData=CheckBox;
+
   mounted() {
     EventBus.$on("userFormClicked", (userForm: string) => {
-      console.log("clicked", userForm);
+this.controlType = "";
       this.userFormType = userForm;
       console.log("clicked", this.userFormType === "userForm3");
+    });
+
+    EventBus.$on("controlClicked", (control: string) => {
+       this.userFormType=""
+      this.controlType = control;
+      console.log(this.controlType);
     });
   }
 }
