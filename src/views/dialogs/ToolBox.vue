@@ -201,12 +201,12 @@ export default class ToolBox extends Vue {
   background-color: rgb(238, 238, 238);
   min-height: 26px;
   box-shadow: 2px 2px lightgrey;
-  height: 150px;
+  height: 160px;
   min-width: 26px;
-  width: 250px;
+  width: 170px;
   position: absolute;
-  left: 700px;
-  top: 351px;
+  left: 620px;
+  top: 40px;
 }
 .toolbox-header {
   display: grid;

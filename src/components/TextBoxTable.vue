@@ -37,7 +37,6 @@
         <td>
           <select
             :value="controlData.BackColor"
-           
           >
             <option v-for="(item,key) in backColor" :key="key" :value="item">{{key}}</option>
           </select>
@@ -157,7 +156,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Height"
+            :value="parseInt(controlData.Height)"
            
           />
         </td>
@@ -204,7 +203,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Left"
+            :value="parseInt(controlData.Left)"
            
           />
         </td>
@@ -347,7 +346,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Top"
+            :value="parseInt(controlData.Top)"
           />
         </td>
       </tr>
@@ -375,7 +374,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Width"
+            :value="parseInt(controlData.Width)"
            
           />
         </td>
@@ -415,6 +414,17 @@ import scrollBars from "../models/scrollBars.json";
 })
 export default class TextBoxTable extends Vue {
   @Prop() controlData: any;
+  backColor: object = backColor;
+  backStyle: object = backStyle;
+  borderColor: object = borderColor;
+  borderStyle: object = borderStyle;
+  font: object = font;
+  foreColor: object = foreColor;
+  mousePointer: object = mousePointer;
+  specialEffect: object = specialEffect;
+  picturePosition: object = picturePosition;
+  textAlign: object = textAlign;
+  scrollBars: object = scrollBars;
 }
 </script>
 

@@ -5,62 +5,90 @@
       <button class="button">Categorized</button>
     </div>
     <table class="table">
-      <tr>
+        <tr>
         <td class="lefttd">(Name)</td>
         <td>
           <input type="text" :value="controlData.Name"  />
         </td>
       </tr>
-      <tr>
-        <td>Accelerator</td>
-        <td>
-          <input type="text" :value="controlData.Accelerator" />
-        </td>
-      </tr>
-      <tr>
-        <td>AutoSize</td>
-        <td>
-          <select :value="controlData.AutoSize" >
-            <option selected :value="false">False</option>
-            <option :value="true">True</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
+     
+    <tr>
         <td>BackColor</td>
         <td>
           <select :value="controlData.BackColor"  >
             <option v-for="(item,key) in backColor" :key="key" :value="item">{{key}}</option>
           </select>
         </td>
-      </tr>
-      <tr>
-        <td>BackStyle</td>
-        <select :value="controlData.BackStyle"  >
-          <option v-for="(item,key) in backStyle" :key="key" :value="item">{{key}}</option>
-        </select>
-      </tr>
-      <tr>
-        <td>Caption</td>
+    </tr>
+          <tr>
+        <td>BorderColor</td>
         <td>
-          <input type="text" :value="controlData.Caption"  />
+          <select :value="controlData.BorderColor" >
+            <option v-for="(item,key) in borderColor" :key="key" :value="item">{{key}}</option>
+          </select>
         </td>
       </tr>
+     <tr>
+        <td>BorderStyle</td>
+        <td>
+          <select :value="controlData.BorderStyle" >
+            <option v-for="(item,key) in borderStyle" :key="key" :value="item">{{key}}</option>
+          </select>
+        </td>
+      </tr>
+      
+         <tr>
+        <td>BoundColumn</td>
+        <td>
+          <input type="text" :value="controlData.BoundColumn"  />
+        </td>
+      </tr>
+
+      <tr>
+        <td>ColumnCount</td>
+        <td>
+          <input type="text" :value="controlData.ColumnCount"  />
+        </td>
+      </tr>
+
+ <tr>
+        <td>ColumnHeads</td>
+        <td>
+          <select :value="controlData.ColumnHeads" >
+            <option selected :value="true">True</option>
+            <option :value="false">False</option>
+          </select>
+        </td>
+      </tr>
+
+<tr>
+        <td>ColumnWidths</td>
+        <td>
+          <input type="text" :value="controlData.ColumnWidths"  />
+        </td>
+      </tr>
+
+
+
+     
+      <tr>
+        <td>ControlSource</td>
+        <td>
+          <input
+            type="text"
+            :value="controlData.ControlSource"
+           
+          />
+        </td>
+      </tr>
+
       <tr>
         <td>ControlTipText</td>
         <td>
           <input type="text" :value="controlData.ControlTipText" />
         </td>
       </tr>
-      <tr>
-        <td>Default</td>
-        <td>
-          <select :value="controlData.Default" >
-            <option selected>true</option>
-            <option>false</option>
-          </select>
-        </td>
-      </tr>
+     
       <tr>
         <td>Enabled</td>
         <td>
@@ -86,12 +114,13 @@
           </select>
         </td>
       </tr>
-      <tr>
+    
+    <tr>
         <td>Height</td>
         <td>
           <input
             type="number"
-           :value="parseInt(controlData.Height)"  
+            :value="parseInt(controlData.Height)"  
            
           />
         </td>
@@ -102,6 +131,31 @@
           <input type="number" :value="controlData.HelpContextId"  />
         </td>
       </tr>
+
+ <tr>
+        <td>IMEMode</td>
+        <td>
+          <select :value="controlData.IMEMode" >
+            <option selected value="0 - fmIMEModeNOControl">0 - fmIMEModeNOControl</option>
+           
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>IntegralHeight</td>
+        <td>
+          <select :value="controlData.IntegralHeight" >
+            <option selected :value="false">False</option>
+            <option :value="true">True</option>
+          </select>
+        </td>
+      </tr>
+
+
+
+
+
+
       <tr>
         <td>Left</td>
         <td>
@@ -112,12 +166,28 @@
           />
         </td>
       </tr>
+       <tr>
+        <td>ListStyle</td>
+        <td>
+          <select :value="controlData.ListStyle">
+            <option v-for="(value,key) in mousePointer" v-bind:value="value" :key="key">{{key}}</option>
+          </select>
+        </td>
+      </tr>
       <tr>
         <td>Locked</td>
         <td>
           <select :value="controlData.Locked" >
             <option selected>True</option>
             <option>False</option>
+          </select>
+        </td>
+      </tr>
+       <tr>
+        <td>MatchEntry</td>
+        <td>
+          <select :value="controlData.MatchEntry">
+            <option v-for="(value,key) in mousePointer" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
       </tr>
@@ -136,16 +206,25 @@
         </td>
       </tr>
       <tr>
-        <td>Picture</td>
+        <td>MultiSelect</td>
         <td>
-          <input type="file" />
+          <select :value="controlData.MultiSelect">
+            <option v-for="(value,key) in mousePointer" v-bind:value="value" :key="key">{{key}}</option>
+          </select>
         </td>
       </tr>
       <tr>
-        <td>PicturePosition</td>
+        <td>RowSource</td>
         <td>
-          <select :value="controlData.PicturePosition">
-            <option v-for="(value,key) in picturePosition" v-bind:value="value" :key="key">{{key}}</option>
+          <input type="number" :value="controlData.RowSource"  />
+        </td>
+      </tr>
+
+       <tr>
+        <td>SpecialEffect</td>
+        <td>
+          <select :value="controlData.SpecialEffect" >
+            <option v-for="(item,key) in specialEffect" :key="key" :value="item">{{key}}</option>
           </select>
         </td>
       </tr>
@@ -170,15 +249,34 @@
           <input type="text" :value="controlData.Tag"   />
         </td>
       </tr>
-      <tr>
-        <td>TakeFocusOnClick</td>
+       <tr>
+        <td>Text</td>
         <td>
-          <select :value="controlData.TakeFocusOnClick" >
-            <option selected>True</option>
-            <option>False</option>
+          <input type="text" :value="controlData.Text"   />
+        </td>
+      </tr>
+    <tr>
+        <td>TextAlign</td>
+        <td>
+          <select
+            :value="controlData.TextAlign"
+           
+          >
+            <option v-for="(value,key) in textAlign" v-bind:value="value" :key="key">{{key}}</option>
           </select>
         </td>
       </tr>
+<tr>
+        <td>TextColumn</td>
+        <td>
+          <input
+            type="number"
+            :value="controlData.TextColumn"
+          />
+        </td>
+      </tr>
+
+
       <tr>
         <td>Top</td>
         <td>
@@ -188,7 +286,25 @@
           />
         </td>
       </tr>
+     <tr>
+        <td>TopIndex</td>
+        <td>
+          <input
+            type="number"
+            :value="controlData.TopIndex"
+          />
+        </td>
+      </tr>
       <tr>
+        <td>Value</td>
+        <td>
+          <select :value="controlData.Value">
+            <option :value="false">False</option>
+            <option :value="true" selected>True</option>
+          </select>
+        </td>
+      </tr>
+       <tr>
         <td>Visible</td>
         <td>
           <select :value="controlData.Visible">
@@ -197,6 +313,7 @@
           </select>
         </td>
       </tr>
+      
       <tr>
         <td>Width</td>
         <td>
@@ -207,16 +324,8 @@
           />
         </td>
       </tr>
-      <tr>
-        <td>WordWrap</td>
-        <td>
-          <select ::value="controlData.WordWrap" >
-            <option selected :value="false">False</option>
-            <option :value="true">True</option>
-          </select>
-        </td>
-      </tr>
-    </table>
+     
+    </table> 
   </div>
 </template>
 
@@ -224,13 +333,15 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import backColor from "../models/backColor.json";
 import backStyle from "../models/backStyle.json";
+import borderColor from "../models/borderColor.json";
+import borderStyle from "../models/borderStyle.json";
 import font from "../models/font.json";
 import foreColor from "../models/foreColor.json";
 import mousePointer from "../models/mousePointer.json";
 import picturePosition from "../models/picturePosition.json";
 import specialEffect from "../models/specialEffect.json";
 import textAlign from "../models/textAlign.json";
-// import { validators } from "../validators/validator";
+
 
 @Component({
   filters: {
@@ -239,11 +350,13 @@ import textAlign from "../models/textAlign.json";
     }
   }
 })
-export default class UserFormTable extends Vue {
+export default class ListControlTable extends Vue {
   @Prop() controlData: any;
   // validators: object = validators;
 
-  backColor: object = backColor;
+   backColor: object = backColor;
+  borderColor: object = borderColor;
+  borderStyle: object = borderStyle;
   backStyle: object = backStyle;
   font: object = font;
   foreColor: object = foreColor;

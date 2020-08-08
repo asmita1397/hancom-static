@@ -1,15 +1,15 @@
-export const userFormData = {
-  Name:"UserForm1",
+export const userFormData2 = {
+  Name:"UserForm2",
   BackColor: "white",
   BorderColor: "ghostwhite",
   BorderStyle:"fmSBorderStyleNone",
-  Caption:"UserForm1",
+  Caption:"UserForm2",
   Cycle: "0 - fmCycleAllForms",
   DrawBuffer: 32000,
   Enabled: true,
   Font: "Tahoma",
   ForeColor: "black",
-  Height: "250px",
+  Height: "300px",
   HelpContextId: 0,
   KeepScrollsBarsVisible: "fmScrollBarsNone",
   Left: "0",
@@ -32,7 +32,7 @@ export const userFormData = {
   Top: "0",
   WhatsThisButton: false,
   WhatsThisHelp: false,
-  Width: "400px",
+  Width: "600px",
   Zoom: "100%"
 }
 

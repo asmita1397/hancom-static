@@ -61,9 +61,10 @@
           <div class="inner-window-content"  tabindex="0" @click.self="innerWindowFocus(true)" @blur="innerWindowFocus(false)">
                <UserFormControl3/>
           </div>
-          <!-- </div> -->
+         
         </div>
         </div>
+        <ToolBox/>
       </div>
     </div>
   </div>
@@ -73,10 +74,13 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserFormControl3 from "./UserFormControl3.vue";
 import { EventBus } from "./event-bus";
+import ToolBox from "../views/dialogs/ToolBox.vue";
+
 
 @Component({
    components: {
-    UserFormControl3
+    UserFormControl3,
+    ToolBox
   }
 })
 export default class UserForm3 extends Vue {
@@ -106,7 +110,7 @@ export default class UserForm3 extends Vue {
   width: 800px;
   height: 400px;
   border-radius: 5px;
-  top:30px;
+ top:50px;
   left:30px;
   font-size: 14px;
   font-family: Tahoma;

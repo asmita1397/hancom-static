@@ -1,9 +1,7 @@
 <template>
   <div>        
         
-     <!-- <UseLabel/>
-     <UseCommandButton/>
-     <UseTextBox/> -->
+      <UseListBox/>
      <UseCheckbox/>
     
     </div>
@@ -11,18 +9,15 @@
 </template>
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import UseLabel from "../views/controls/UseLabel.vue";
-import UseCommandButton  from '../views/controls/UseCommandButton.vue'
-import UseTextBox from "../views/controls/UseTextBox.vue";
-import UseCheckbox from "../views/controls/UseCheckbox.vue";
+
+import UseCheckbox from "../views/controls/UseCheckbox.vue"; 
+import UseListBox from "../views/controls/UseListBox.vue";
 
 @Component({
   components: {
-   UseCommandButton,
-   UseTextBox,
+   
    UseCheckbox,
-   UseLabel
-  
+   UseListBox
   }
 })
 export default class UserFormControl3 extends Vue {

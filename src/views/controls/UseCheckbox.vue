@@ -20,7 +20,6 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { Label } from "../../models/Label";
 import { EventBus } from "../../components/event-bus";
 
 @Component({
@@ -44,7 +43,7 @@ export default class UseCheckBox extends Vue {
      width: 137px;
     height: 100px;
     position:absolute;
-    left: 195px;
+    left: 403px;
     top: 124px;
     --border-width: 5;
     --stripe-distance: 1px;

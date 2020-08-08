@@ -1,19 +1,19 @@
-export const CommandButton = {
-  Name: "CommandButton1",
+export const CommandButton2 = {
+  Name: "CommandButton2",
   Accelerator: "",
   AutoSize: false,
   BackColor: "white",
   BackStyle: "solid",
   Cancel:false,
-  Caption: "CommandButton1",
+  Caption: "CommandButton2",
   ControlTipText:"",
   Default:false,
   Enabled: true,
   Font: "Arial, Helvetica, sans-serif",
   ForeColor: "black",
-  Height: "40px",
+  Height: "50px",
   HelpContextId: 0,
-  Left: "20px",
+  Left: "339px",
   Locked: false,
   MouseIcon: "(None)",
   MousePointer:"",
@@ -25,7 +25,7 @@ export const CommandButton = {
   TakeFocusOnClick: true,
   Top: "100px",
   Visible: true,
-  Width: "100px",
+  Width: "80px",
   WordWrap: "break-word",
   
 };

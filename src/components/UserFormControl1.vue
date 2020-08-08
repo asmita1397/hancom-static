@@ -1,27 +1,27 @@
 <template>
   <div>        
         
-     <UseLabel/>
-     <UseCommandButton/>
-     <UseTextBox/>
-     <UseCheckbox/>
+     <UseLabel1/>
+     <UseCommandButton3/>
+     <!-- <UseTextBox/> -->
+    
     
     </div>
  
 </template>
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import UseLabel from "../views/controls/UseLabel.vue";
-import UseCommandButton  from '../views/controls/UseCommandButton.vue'
+import UseLabel1 from "../views/controls/UseLabel1.vue";
+import UseCommandButton3  from '../views/controls/UseCommandButton3.vue'
 import UseTextBox from "../views/controls/UseTextBox.vue";
 import UseCheckbox from "../views/controls/UseCheckbox.vue";
 
 @Component({
   components: {
-   UseCommandButton,
+   UseCommandButton3,
    UseTextBox,
    UseCheckbox,
-   UseLabel
+   UseLabel1
   
   }
 })

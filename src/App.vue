@@ -13,12 +13,12 @@
                   <div class="sideheader">
                     <span class="sideheader1">
                       Project - VBAProject
-                      <button
-                        style="float:right"
-                        v-on:click="noDisplayTreeBrowser"
-                      >
-                        <b>X</b>
-                      </button>
+                    
+                       <div id="mdiv"  v-on:click="noDisplayTreeBrowser">
+            <div class="mdiv">
+              <div class="md"></div>
+            </div>
+          </div>
                     </span>
                   </div>
 
@@ -38,13 +38,21 @@
             </Split>
           </SplitArea>
           <SplitArea :size="75" class="right">
-            <button @click="()=>{ display='userForm1'}">UserForm1</button>
-            <button @click="()=>{ display='userForm2'}">UserForm2</button>
-            <button @click="()=>{ display='userForm3'}">UserForm3</button>
+          <div style="display:-webkit-inline-box"> 
+            <div class="dialog-action-div" @click="()=>{ display='userForm1'}">
+    <button class="dialog-action-button">UserForm1</button>
+  </div>
+   <div class="dialog-action-div" @click="()=>{ display='userForm2'}">
+    <button class="dialog-action-button">UserForm2</button>
+  </div>
+   <div class="dialog-action-div"  @click="()=>{ display='userForm3'}">
+    <button class="dialog-action-button">UserForm3</button>
+  </div></div>
+            
             <UserForm1  v-if="display==='userForm1'"/>
              <UserForm2 v-else-if="display==='userForm2'"/>
             <UserForm3 v-else-if="display==='userForm3'" />
-            <ToolBox />
+            
           </SplitArea>
         </Split>
       </div>
@@ -62,7 +70,6 @@ import UserForm3 from "./components/UserForm3.vue";
 import { State, Getter, Mutation } from "vuex-class";
 
 import TreeBrowser from "./components/TreeBrowser.vue";
-import ToolBox from "./views/dialogs/ToolBox.vue";
 import UserFormPropertiesList from "./components/UserFormPropertiesList.vue";
 import { EventBus } from "./components/event-bus";
 
@@ -73,7 +80,6 @@ import { EventBus } from "./components/event-bus";
     UserForm2,
     UserForm3,
     TreeBrowser,
-    ToolBox,
     UserFormPropertiesList
   }
 })
@@ -149,6 +155,64 @@ font-family: Tahoma;
   height: 10%;
   border-bottom: 1px solid #eee;
   background-color: #ffffff;
+}
+#mdiv {
+float: right;
+    margin: initial;
+    position: relative;
+    top: 0px;
+    width: 20px;
+    height: 16px;
+    background-color: lightgray;
+    border: outset;
+}
+
+.mdiv {
+ height: 17px;
+    width: 2px;
+    margin-left: 60px;
+    background-color: black;
+    transform: rotate(45deg);
+    z-index: 1;
+    position: absolute;
+    right: 8px;
+}
+
+.md {
+      height: 17px;
+    width: 2px;
+    background-color: black;
+    transform: rotate(90deg);
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+}
+.commandbutton-element{
+    border:1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    min-width: 50px;
+    max-width:112px;
+    width: fit-content;
+    height: fit-content;
+    min-height:20px;
+    padding: 0px 5px 0px 5px;
+    overflow: hidden;
+}
+.dialog-action-button{
+    background-color: #f2eded;
+    width: 79px;
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    overflow: hidden;
+    }
+:focus{
+  outline: none;
 }
 </style>
 

@@ -10,7 +10,7 @@
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
   <div class="dialog-action-div" @click.stop="commandButtonClicked">
-    <button class="dialog-action-button">Command Button 1</button>
+    <button class="dialog-action-button">Command Button 2</button>
   </div>
 </div>
 </div>
@@ -24,12 +24,12 @@ import { EventBus } from "../../components/event-bus";
   components: {
   }
 })
-export default class UseCommandButton extends Vue {
+export default class UseCommandButton2 extends Vue {
   commandButtonClicked()
   {
      EventBus.$emit(
       "controlClicked",
-      "commandButton1"
+      "commandButton2"
     );
   }
 }
@@ -43,7 +43,8 @@ export default class UseCommandButton extends Vue {
     width: 80px;
     height: 50px;
     position:absolute;
-    left:10px;
+   left: 339px;
+    top: 100px;
     --border-width: 5;
     --stripe-distance: 2px;
    border: calc(var(--border-width)*1px) solid transparent;
@@ -58,8 +59,8 @@ export default class UseCommandButton extends Vue {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: white;
-    border: 1px solid #333;
+    background: black;
+    border: 1px solid white;
 }
 .handle-tl {
   top: -5px;

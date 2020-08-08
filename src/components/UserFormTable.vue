@@ -90,7 +90,7 @@
         <td>
           <input
             type="number"
-            :value="userFormData.Height"
+            :value="parseInt(userFormData.Height)"
           />
         </td>
       </tr>
@@ -118,7 +118,7 @@
         <td>
           <input
             type="number"
-            :value="userFormData.Left"
+            :value="parseInt(userFormData.Left)"
             
           />
         </td>
@@ -248,7 +248,7 @@
         <td>
           <input
             type="number"
-            :value="userFormData.Top"
+            :value="parseInt(userFormData.Top)"
            
           />
         </td>
@@ -275,11 +275,11 @@
         </td>
       </tr>
       <tr>
-        <td>Width</td>
+        <td>Width </td>
         <td>
           <input
             type="number"
-            :value="userFormData.Width"
+            :value="parseInt(userFormData.Width)"
            
           />
         </td>
@@ -317,11 +317,7 @@ import pictureSizeMode from "../models/pictureSizeMode.json";
 import { Getter, Mutation } from 'vuex-class';
 @Component({
   
-  filters:{
-    sizeFilter(value: any) {
-      return parseInt(value, 10)
-    }
-  }
+  
 })
 
 

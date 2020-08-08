@@ -1,5 +1,5 @@
 <template>
-<div>
+<div> 
   <div class="mainDiv">
 <div class="handle handle-tl"></div>
 <div class="handle handle-tr"></div>
@@ -9,7 +9,9 @@
 <div class="handle handle-bl"></div>
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
-		<input  class="text-box-design" type="text" @click.stop="inputClicked" />
+  <div class="dialog-action-div" @click.stop="commandButtonClicked">
+    <button class="dialog-action-button">Command Button 1</button>
+  </div>
 </div>
 </div>
 </template>
@@ -22,12 +24,12 @@ import { EventBus } from "../../components/event-bus";
   components: {
   }
 })
-export default class UseTextBox extends Vue {
-  inputClicked()
+export default class UseCommandButton1 extends Vue {
+  commandButtonClicked()
   {
-    EventBus.$emit(
+     EventBus.$emit(
       "controlClicked",
-      "inputBox1"
+      "commandButton1"
     );
   }
 }
@@ -37,26 +39,16 @@ export default class UseTextBox extends Vue {
 :focus{
   outline: none;
 }
-.text-box-design{
-    border:0.2px solid gray;
-    box-shadow: -1px -1px gray;
-    width: 100px;
-    height: 20px;
-    left:400px;
-    top:50px;
-}
 .mainDiv {
-    width: 105px;
-    height: 24px;
-    position: absolute;;
-    left: 35px;
-    top:50px;
-    outline:2px;
+    width: 80px;
+    height: 50px;
+    position:absolute;
+    left:10px;
     --border-width: 5;
     --stripe-distance: 2px;
-    border: calc(var(--border-width)*1px) solid transparent;
+   border: calc(var(--border-width)*1px) solid transparent;
     border-image:
-     repeating-linear-gradient( 29deg, black, transparent 0.5px,
+     repeating-linear-gradient( 29deg, black, transparent .4px,
      transparent var(--stripe-distance), black calc(var(--stripe-distance) + 0.1px))
       var(--border-width);
 }
@@ -113,4 +105,29 @@ export default class UseTextBox extends Vue {
   right: -5px;
   cursor: se-resize;
 }
+.commandbutton-element{
+    border:1px solid gray;
+    border-radius: 3px;
+    background-color: white;
+    min-width: 50px;
+    max-width:112px;
+    width: fit-content;
+    height: fit-content;
+    min-height:20px;
+    padding: 0px 5px 0px 5px;
+    overflow: hidden;
+}
+.dialog-action-button{
+  background-color: white;
+        width: 80px;
+        max-width: 80px;
+        height: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border: 1px solid gray;
+        border-radius: 3px;
+        overflow: hidden;
+    }
 </style>

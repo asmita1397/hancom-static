@@ -1,6 +1,6 @@
 <template>
-<div>
-  <div class="mainDiv">
+  <div>
+    <div class="mainDiv">
 <div class="handle handle-tl"></div>
 <div class="handle handle-tr"></div>
 <div class="handle handle-tm"></div>
@@ -9,9 +9,9 @@
 <div class="handle handle-bl"></div>
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
-		<input  class="text-box-design" type="text" @click.stop="inputClicked" />
-</div>
-</div>
+    <label class="label" for="" @click.stop="labelClicked">Label1</label>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,41 +22,46 @@ import { EventBus } from "../../components/event-bus";
   components: {
   }
 })
-export default class UseTextBox extends Vue {
-  inputClicked()
+export default class UseLabel1 extends Vue {
+  labelClicked()
   {
     EventBus.$emit(
       "controlClicked",
-      "inputBox1"
+      "label1"
     );
   }
 }
 </script>
 
 <style scoped>
-:focus{
-  outline: none;
-}
-.text-box-design{
-    border:0.2px solid gray;
-    box-shadow: -1px -1px gray;
-    width: 100px;
-    height: 20px;
-    left:400px;
-    top:50px;
+
+.label {
+  left:100px;
+  top:100px;
+  border: none;
+  width: 130px;
+  background-color: rgb(238, 238, 238);
+  height: 50px;
+  text-align: left;
+  background: white;
+  float:left;
+  color:black;
+  padding-left:2px;
+  
 }
 .mainDiv {
-    width: 105px;
-    height: 24px;
-    position: absolute;;
-    left: 35px;
-    top:50px;
-    outline:2px;
+    position: absolute;
+      position: absolute;
+    left: 265px;
+    top: 151px;
+  width: 132px;
+  height: 50px;
     --border-width: 5;
     --stripe-distance: 2px;
-    border: calc(var(--border-width)*1px) solid transparent;
-    border-image:
-     repeating-linear-gradient( 29deg, black, transparent 0.5px,
+     --border-width: 5;
+    --stripe-distance: 1px;
+     border: calc(var(--border-width)*1px) solid transparent;
+    border-image: repeating-linear-gradient( 29deg, black, transparent .4px,
      transparent var(--stripe-distance), black calc(var(--stripe-distance) + 0.1px))
       var(--border-width);
 }
@@ -113,4 +118,5 @@ export default class UseTextBox extends Vue {
   right: -5px;
   cursor: se-resize;
 }
+
 </style>

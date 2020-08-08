@@ -1,27 +1,31 @@
 <template>
   <div>        
-        
+        <UseTextBox/>
+         <UseLabel2/>
+     <UseCommandButton2/>
+     <!--
+     <UseCheckbox/>
+      -->
+     
     
-     <UseCommandButton/>
-     <UseTextBox/>
-    <!--  <UseBorder/> -->
     </div>
  
 </template>
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import UseLabel from "../views/controls/UseLabel.vue";
-import UseCommandButton  from '../views/controls/UseCommandButton.vue'
+ import UseLabel2 from "../views/controls/UseLabel2.vue";
+import UseCommandButton2  from '../views/controls/UseCommandButton2.vue'
+/*import UseCheckbox from "../views/controls/UseCheckbox.vue"; */
 import UseTextBox from "../views/controls/UseTextBox.vue";
-import UseBorder from "../views/controls/UseBorder.vue";
 
 @Component({
   components: {
-   /* UseLabel, */
-   UseCommandButton,
+  /*  
+   UseCheckbox,
+    */
+   UseCommandButton2,
    UseTextBox,
-   UseBorder
-  
+   UseLabel2
   }
 })
 export default class UserFormControl2 extends Vue {

@@ -112,7 +112,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.height"
+           :value="parseInt(controlData.Height)"  
            
           />
         </td>
@@ -128,7 +128,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Left"
+            :value="parseInt(controlData.Left)"
          
           />
         </td>
@@ -215,7 +215,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Top"
+            :value="parseInt(controlData.Top)"
           />
         </td>
       </tr>
@@ -252,7 +252,7 @@
         <td>
           <input
             type="number"
-            :value="controlData.Width"
+            :value="parseInt(controlData.Width)"
            
           />
         </td>
