@@ -25,18 +25,18 @@
       <select class="form-control" name="selectedUserForm" id="selectedUserForm" > 
 
 
-        <option >userForm1</option>
-        <option >label1</option>
-         <option  >commandButton1</option>
+        <option >UserForm1 UserForm </option>
+        <option >Label1 Label</option>
+         <option  >CommandButton1 CommandButton</option>
 
-        <option >userForm2</option>
-         <option>label2</option>
-        <option>commandButton2</option>
-        <option>TextBox1</option>
+        <option >UserForm2 UserForm</option>
+         <option>label2 Label</option>
+        <option>CommandButton2 CommandButton</option>
+        <option>TextBox1 TextBox</option>
 
-        <option  >userForm3</option>
-         <option  >checkBox1</option>
-        <option >listBox1</option>
+        <option  >UserForm3 UserForm</option>
+         <option  >CheckBox1 CheckBox</option>
+        <option >ListBox1 ListBox</option>
       
         
       </select>
