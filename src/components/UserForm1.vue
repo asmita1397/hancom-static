@@ -68,8 +68,7 @@
 
 
 
-              
-          <ToolBox/>
+          
       </div>
     </div>
   </div>
@@ -79,13 +78,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserFormControl1 from "./UserFormControl1.vue";
 import { EventBus } from "./event-bus";
-import ToolBox from "../views/dialogs/ToolBox.vue";
 
 
 @Component({
    components: {
     UserFormControl1,
-    ToolBox
+    
   }
 })
 export default class UserForm1 extends Vue {

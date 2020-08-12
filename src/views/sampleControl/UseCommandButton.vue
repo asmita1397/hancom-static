@@ -18,7 +18,7 @@ import { EventBus } from "../../components/event-bus";
   components: {
   }
 })
-export default class UseCommandButton3 extends Vue {
+export default class UseCommandButton extends Vue {
   commandButtonClicked()
   {
      EventBus.$emit(
@@ -40,9 +40,7 @@ export default class UseCommandButton3 extends Vue {
   border: none;
   box-shadow: 2px 2px gray;
    overflow: hidden;
-    left: 100px;
-    position: absolute;
-    top: 20px;
+ 
 }
 .commandbutton-element{
     border:1px solid gray;

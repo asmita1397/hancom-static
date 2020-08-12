@@ -9,9 +9,11 @@
 <div class="handle handle-bl"></div>
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
-  <div class="dialog-action-div" @click.stop="commandButtonClicked">
+<!--   <div class="dialog-action-div" @click.stop="commandButtonClicked">
     <button class="dialog-action-button">Command Button 1</button>
-  </div>
+  </div> -->
+              <button class="commandbutton">CommandButton1</button>
+
 </div>
 </div>
 </template>
@@ -105,7 +107,7 @@ export default class UseCommandButton1 extends Vue {
   right: -5px;
   cursor: se-resize;
 }
-.commandbutton-element{
+/* .commandbutton-element{
     border:1px solid gray;
     border-radius: 3px;
     background-color: white;
@@ -129,5 +131,13 @@ export default class UseCommandButton1 extends Vue {
         border: 1px solid gray;
         border-radius: 3px;
         overflow: hidden;
-    }
+    } */
+
+    .commandbutton {
+      overflow: hidden;
+  width: 130px;
+  height: 35px;
+  border: none;
+  box-shadow: 2px 2px gray;
+}
 </style>

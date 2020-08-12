@@ -15,7 +15,7 @@ export const TextBox = {
   EnterKeyBehavior: false,
   Font: "Arial, Helvetica, sans-serif",
   ForeColor: "black",
-  Height: "40px",
+  Height: "50px",
   HelpContextId: 0,
   HideSelection: true,
   ImeMode: "0 - fmIMEModeNOControl",
@@ -38,6 +38,6 @@ export const TextBox = {
   Top: "100px",
   Value: "",
   Visible: true,
-  Width: "100px",
+  Width: "150px",
   WordWrap: "break-word",
 };

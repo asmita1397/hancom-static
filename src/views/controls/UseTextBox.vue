@@ -40,14 +40,14 @@ export default class UseTextBox extends Vue {
 .text-box-design{
     border:0.2px solid gray;
     box-shadow: -1px -1px gray;
-    width: 100px;
-    height: 20px;
+    width: 150px;
+    height: 50px;
     left:400px;
     top:50px;
 }
 .mainDiv {
-    width: 105px;
-    height: 24px;
+    width:156px;
+    height: 54px;
     position: absolute;;
     left: 35px;
     top:50px;

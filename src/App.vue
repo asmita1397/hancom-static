@@ -9,16 +9,15 @@
           <SplitArea :size="25" class="splitleft">
             <Split :direction="vertical">
               <SplitArea class="innersplit">
-                 <div v-if="noDisplayTree===false">
+                <div v-if="noDisplayTree===false">
                   <div class="sideheader">
                     <span class="sideheader1">
-                      Project - VBAProject
-                    
-                       <div id="mdiv"  v-on:click="noDisplayTreeBrowser">
-            <div class="mdiv">
-              <div class="md"></div>
-            </div>
-          </div>
+                      <span>Project - VBAProject</span>
+                      <div id="mdiv" v-on:click="noDisplayTreeBrowser">
+                        <div class="mdiv">
+                          <div class="md"></div>
+                        </div>
+                      </div>
                     </span>
                   </div>
 
@@ -27,7 +26,7 @@
                   </div>
                   <hr />
                   <div>
-                    <TreeBrowser style="cursor:pointer;" :node="root"/>
+                    <TreeBrowser style="cursor:pointer;" :node="root" />
                   </div>
                 </div>
               </SplitArea>
@@ -37,22 +36,28 @@
               </SplitArea>
             </Split>
           </SplitArea>
-          <SplitArea :size="75" class="right">
-          <div style="display:-webkit-inline-box"> 
-            <div class="dialog-action-div" @click="()=>{ display='userForm1'}">
-    <button class="dialog-action-button">UserForm1</button>
-  </div>
-   <div class="dialog-action-div" @click="()=>{ display='userForm2'}">
-    <button class="dialog-action-button">UserForm2</button>
-  </div>
-   <div class="dialog-action-div"  @click="()=>{ display='userForm3'}">
-    <button class="dialog-action-button">UserForm3</button>
-  </div></div>
-            
-            <UserForm1  v-if="display==='userForm1'"/>
-             <UserForm2 v-else-if="display==='userForm2'"/>
-            <UserForm3 v-else-if="display==='userForm3'" />
-            
+          <SplitArea :size="65" style="background:gray;">
+            <div style="position:relative;">
+              <!-- <div style="display:-webkit-inline-box">
+                <div class="dialog-action-div" @click="()=>{ display='userForm1'}">
+                  <button class="dialog-action-button">UserForm1</button>
+                </div>
+                <div class="dialog-action-div" @click="()=>{ display='userForm2'}">
+                  <button class="dialog-action-button">UserForm2</button>
+                </div>
+                <div class="dialog-action-div" @click="()=>{ display='userForm3'}">
+                  <button class="dialog-action-button">UserForm3</button>
+                </div>
+              </div> -->
+
+              <UserForm1 v-if="display==='userForm1'" />
+              <UserForm2 v-else-if="display==='userForm2'" />
+              <UserForm3 v-else-if="display==='userForm3'" />
+              <UserForm4 v-else-if="display==='userForm4'" />
+            </div>
+          </SplitArea>
+          <SplitArea :size="10">
+            <ToolBox />
           </SplitArea>
         </Split>
       </div>
@@ -66,7 +71,8 @@ import Header from "./components/Header.vue";
 import UserForm1 from "./components/UserForm1.vue";
 import UserForm2 from "./components/UserForm2.vue";
 import UserForm3 from "./components/UserForm3.vue";
-
+import UserForm4 from "./components/UserForm4.vue";
+import ToolBox from "./views/dialogs/ToolBox.vue";
 import { State, Getter, Mutation } from "vuex-class";
 
 import TreeBrowser from "./components/TreeBrowser.vue";
@@ -79,34 +85,39 @@ import { EventBus } from "./components/event-bus";
     UserForm1,
     UserForm2,
     UserForm3,
+    UserForm4,
     TreeBrowser,
-    UserFormPropertiesList
+    UserFormPropertiesList,
+    ToolBox
   }
 })
 export default class App extends Vue {
   @Getter root!: any;
   vertical = "vertical";
-  display = 'bbbb';
-  noDisplayTree= false;
+  display = "";
+  noDisplayTree = false;
   noDisplayTreeBrowser() {
-      this.noDisplayTree = true;
-    }
-  mounted()
-  {
-    console.log("root",this.root)
+    this.noDisplayTree = true;
   }
- 
+  mounted() {
+    console.log("root", this.root);
+
+    EventBus.$on("userFormButtonClicked", (userForm: string) => {
+      this.display = userForm;
+      console.log( this.display)
+    });
+  }
 }
 </script>
 
 
 <style scoped>
 #app {
-font-family: Tahoma;
+  font-family: Tahoma;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  font-size:14px;
+  font-size: 14px;
 }
 
 .splitleft {
@@ -129,6 +140,9 @@ font-family: Tahoma;
   /* width: 250px; */
   background-color: rgb(142, 191, 231);
   margin-bottom: 8px;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
 }
 .sideheader {
   height: 22px;
@@ -157,61 +171,62 @@ font-family: Tahoma;
   background-color: #ffffff;
 }
 #mdiv {
-float: right;
-    margin: initial;
-    position: relative;
-    top: 0px;
-    width: 20px;
-    height: 16px;
-    background-color: lightgray;
-    border: outset;
+  float: right;
+  margin: auto;
+  position: relative;
+  top: 0px;
+  left:0px;
+  width: 20px;
+  height: 16px;
+  background-color: lightgray;
+  border: outset;
 }
 
 .mdiv {
- height: 17px;
-    width: 2px;
-    margin-left: 60px;
-    background-color: black;
-    transform: rotate(45deg);
-    z-index: 1;
-    position: absolute;
-    right: 8px;
+  height: 17px;
+  width: 2px;
+  margin-left: 60px;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: 1;
+  position: absolute;
+  right: 8px;
 }
 
 .md {
-      height: 17px;
-    width: 2px;
-    background-color: black;
-    transform: rotate(90deg);
-    z-index: 2;
-    position: absolute;
-    right: 0px;
+  height: 17px;
+  width: 2px;
+  background-color: black;
+  transform: rotate(90deg);
+  z-index: 2;
+  position: absolute;
+  right: 0px;
 }
-.commandbutton-element{
-    border:1px solid gray;
-    border-radius: 3px;
-    background-color: white;
-    min-width: 50px;
-    max-width:112px;
-    width: fit-content;
-    height: fit-content;
-    min-height:20px;
-    padding: 0px 5px 0px 5px;
-    overflow: hidden;
+.commandbutton-element {
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: white;
+  min-width: 50px;
+  max-width: 112px;
+  width: fit-content;
+  height: fit-content;
+  min-height: 20px;
+  padding: 0px 5px 0px 5px;
+  overflow: hidden;
 }
-.dialog-action-button{
-    background-color: #f2eded;
-    width: 79px;
-    height: 35px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border: 1px solid gray;
-    border-radius: 3px;
-    overflow: hidden;
-    }
-:focus{
+.dialog-action-button {
+  background-color: #f2eded;
+  width: 79px;
+  height: 35px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  overflow: hidden;
+}
+:focus {
   outline: none;
 }
 </style>

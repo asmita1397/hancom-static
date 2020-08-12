@@ -9,9 +9,7 @@
 <div class="handle handle-bl"></div>
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
-  <div class="dialog-action-div" @click.stop="commandButtonClicked">
-    <button class="dialog-action-button">Command Button 2</button>
-  </div>
+ <button class="commandbutton" @click.stop="commandButtonClicked">CommandButton2</button>
 </div>
 </div>
 </template>
@@ -36,6 +34,15 @@ export default class UseCommandButton2 extends Vue {
 </script>
 
 <style scoped>
+.commandbutton {
+  width: 80px;
+    height: 50px;
+  border: none;
+  box-shadow: 2px 2px gray;
+   overflow: hidden;
+   left: 339px;
+    top: 100px;
+}
 :focus{
   outline: none;
 }

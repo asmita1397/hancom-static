@@ -30,10 +30,10 @@ export default {
     height: 102px;
     overflow-y: auto;
     box-shadow: -1px -1px grey;
+    position: relative;
     background:white;
-     top: 10px;
-    position: absolute;
-    left: 10px;
+    top:10px;
+    left:10px;
 }
 .ul {
   display: block;

@@ -90,6 +90,12 @@
       <i style="font-size:15px" class="fa">&#xf04b;</i>
       <i style="font-size:17px" class="fa">&#xf28c;</i>
       <i style="font-size:17px" class="fa">&#xf04d;</i>
+      
+      <button class="btn-style" @click="handleClick('userForm1')">Userform1</button>
+      <button class="btn-style" @click="handleClick('userForm2')">Userform2</button>
+      <button class="btn-style" @click="handleClick('userForm3')">Userform3</button>
+      <button class="btn-style" @click="handleClick('userForm4')">Userform4</button>
+
     </div>
   </div>
 </template>
@@ -129,6 +135,14 @@ export default class Header extends Vue {
     };
 
     this.addtreeBrowserData(newUserForm);
+  }
+  handleClick(data: string)
+  {
+     console.log("data",data)
+     EventBus.$emit(
+      "userFormButtonClicked",
+       data
+     )
   }
   
 }
@@ -262,5 +276,46 @@ i:hover {
   display: inline-block;
 }
 
+.commandbutton-element {
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: white;
+  min-width: 50px;
+  max-width: 112px;
+  width: fit-content;
+  height: fit-content;
+  min-height: 20px;
+  padding: 0px 5px 0px 5px;
+  overflow: hidden;
+}
+.dialog-action-button {
+  background-color: #f2eded;
+  width: 79px;
+  height: 35px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.btn-style{
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: white;
+  min-width: 50px;
+  max-width: 112px;
+  width: fit-content;
+  height: fit-content;
+  min-height: 20px;
+  padding: 0px 5px 0px 5px;
+  overflow: hidden;
+  top: -3px;
+  position: relative;
+}
+:focus{
+  outline:none
+}
 /* .tablink:hover .dropbtn {background-color: #3e8e41;} */
 </style>

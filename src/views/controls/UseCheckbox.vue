@@ -9,11 +9,13 @@
 <div class="handle handle-bl"></div>
 <div class="handle handle-br"></div>
 <div class="handle handle-bm"></div>
-      <label class="control" @click.stop="checkBoxClicked">
-       <input type="checkbox" class="control-input visually-hidden"/>
-       <span class="control-indicator"></span>
-       CheckBox1
-   </label>
+     <div class="outer-check">
+    <label class="control">
+      <input type="checkbox" class="control-input visually-hidden" />
+      <span class="control-indicator"></span>
+      <span style="font-size: 12px;">CheckBox1</span>
+    </label>
+  </div>
     </div>
 </div>
 </template>
@@ -105,40 +107,47 @@ export default class UseCheckBox extends Vue {
   right: -5px;
   cursor: se-resize;
 }
-.visually-hidden{
-        border: 0;
-        clip: rect(0,0,0,0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-    .control{
-        display: inline-flex;
-        align-items: center;
-        background:white;
-         width: 137px;
+.outer-check {
+  position: relative;
+width: 137px;
     height: 100px;
-    }
-    .control-indicator{
-        width:14px;
-        height: 14px;
-        margin: 1px;
-        margin-right: 6px;
-        border: 1px solid black;
-        border-radius: 3px;
-        /* background-image: url('./checkmark.png'); */
-    }
-    .control-input:hover ~ .control-indicator {
-        background-color: rgb(184, 209, 255);
-    }
-    .control-input:checked ~ .control-indicator {
-        background-color: rgb(107, 158, 253);
-        background-image: url('../../assets/pictures/checkmark.png');
-        background-size: 10px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+  background-color: rgb(238, 238, 238);
+  box-shadow: -1px -1px gray;
+  overflow: hidden;
+}
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.control {
+  position: absolute;
+  top: 40%;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+.control-indicator {
+  width: 14px;
+  height: 14px;
+  margin: 1px;
+  margin-right: 6px;
+  background-color: white;
+  /* border: 1px solid lightgray; */
+  border: white;
+  box-shadow: -1px -1px grey;
+  /* background-image: url('./checkmark.png'); */
+}
+.control-input:checked ~ .control-indicator {
+  /* background-color: rgb(107, 158, 253); */
+  background-image: url("../../assets/controls-pictures/checkmark.png");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 </style>

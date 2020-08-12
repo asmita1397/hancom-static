@@ -40,10 +40,9 @@ export default class UseLabel2 extends Vue {
   top:100px;
   border: none;
   width: 130px;
-  background-color: rgb(238, 238, 238);
+   background:#efefef;
   height: 30px;
   text-align: left;
-  background: white;
   float:left;
   padding-left:2px;
   color:black;

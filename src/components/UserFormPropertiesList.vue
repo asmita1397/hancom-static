@@ -25,14 +25,14 @@
       <select class="form-control" name="selectedUserForm" id="selectedUserForm" > 
 
 
-        <option >UserForm1 UserForm </option>
+        <option >UserForm1 UserForm</option>
         <option >Label1 Label</option>
          <option  >CommandButton1 CommandButton</option>
 
         <option >UserForm2 UserForm</option>
-         <option>label2 Label</option>
+         <option>Label2 Label</option>
         <option>CommandButton2 CommandButton</option>
-        <option>TextBox1 TextBox</option>
+        <option>TextBox1  TextBox</option>
 
         <option  >UserForm3 UserForm</option>
          <option  >CheckBox1 CheckBox</option>
@@ -83,6 +83,8 @@ import TextBoxTable from "./TextBoxTable.vue";
 import CheckBoxControlTable from "./CheckBoxControlTable.vue";
 import { ListBox } from "../models/ListBox";
 import ListControlTable from "./ListControlTable.vue";
+
+
 
 @Component({
   components: {

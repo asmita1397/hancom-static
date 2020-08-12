@@ -6,7 +6,7 @@
           <img src="../assets/userform/OuterWindow.png" style="width:12px;height:12px" />
         </div>
         <div>
-          <span style="margin-left: 5px;">Book1 - UserForm2 (UserForm)</span>
+          <span style="margin-left: 5px;">Book1 - UserForm4 (UserForm)</span>
         </div>
         <div>
           <div class="outer-window-button">
@@ -45,7 +45,7 @@
         <div class="inner-userform-window" :style="{margin:innerWindowFocused?'': '5px'}">
           <div class="inner-userform-header">
             <div>
-              <span>UserForm2</span>
+              <span>UserForm4</span>
             </div>
             <div>
               <button class="ui-btn close closeButton" >
@@ -59,12 +59,12 @@
           </div>
           <!-- <div class="inner-userform-body"> -->
           <div class="inner-window-content"  tabindex="0" @click.self="innerWindowFocus(true)" @blur="innerWindowFocus(false)">
-               <UserFormControl2/>
+               <UserFormControl4/>
           </div>
-          <!-- </div> -->
+         
         </div>
         </div>
-       
+        
       </div>
     </div>
   </div>
@@ -72,16 +72,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import UserFormControl2 from "./UserFormControl2.vue";
+import UserFormControl4 from "./UserFormControl4.vue";
 import { EventBus } from "./event-bus";
 
 
 @Component({
    components: {
-    UserFormControl2,
+    UserFormControl4,
+    
   }
 })
-export default class UserForm2 extends Vue {
+export default class UserForm4 extends Vue {
   innerWindowFocused: boolean = false
   innerWindowFocus(value: boolean)
   {
@@ -92,7 +93,7 @@ export default class UserForm2 extends Vue {
     console.log("user form was clicked")
     EventBus.$emit(
       "userFormClicked",
-      "userForm2"
+      "userForm3"
     );
   }
   
@@ -108,7 +109,7 @@ export default class UserForm2 extends Vue {
   width: 800px;
   height: 400px;
   border-radius: 5px;
-  top:50px;
+ top:50px;
   left:30px;
   font-size: 14px;
   font-family: Tahoma;
