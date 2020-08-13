@@ -5,7 +5,7 @@
         <div class="tab" v-for="(value,key) in values" :key="key">
           <input name="tab-group-1" :id="value.id" type="radio" />
           <label :for="value.id">{{value.tabLabel}}</label>
-          <div class="content">{{value.tabContent}}</div>
+          <div class="content"><UseTextBox/></div>
         </div>
       </div>
       <div></div>
@@ -19,8 +19,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
+import UseTextBox from "./UseTextBox.vue";
 @Component({
-  components: {},
+  components: {
+    UseTextBox
+  },
 })
 export default class InsertElement extends Vue {
     isScroll=true
@@ -29,33 +32,33 @@ export default class InsertElement extends Vue {
   values = [
     {
       id: "tab-1",
-      tabLabel: "Tab One",
-      tabContent: "Content 1",
+      tabLabel: "Tab1",
+      
     },
     {
       id: "tab-2",
-      tabLabel: "Tab Two",
-      tabContent: "Content 2",
+      tabLabel: "Tab2",
+      
     },
     {
       id: "tab-3",
-      tabLabel: "Tab Three",
-      tabContent: "Content 3",
+      tabLabel: "Tab3",
+     
     },
     {
       id: "tab-4",
-      tabLabel: "Tab Four",
-      tabContent: "Content 4",
+      tabLabel: "Tab4",
+     
     },
     {
       id: "tab-5",
-      tabLabel: "Tab Five",
-      tabContent: "Content 5",
+      tabLabel: "Tab5",
+     
     },
     {
       id: "tab-6",
-      tabLabel: "Tab Six",
-      tabContent: "Content 6",
+      tabLabel: "Tab6",
+     
     },
   ];
 
@@ -73,6 +76,11 @@ export default class InsertElement extends Vue {
     const scrollRef = (this as any).$refs.scrolling;
     console.log(scrollRef);
     scrollRef.scrollLeft += 80;
+  }
+   mounted(){
+    const ele: any= document.getElementsByName("tab-group-1");
+    console.log(ele);
+    ele[0].checked = true;
   }
 }
 </script>

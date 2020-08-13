@@ -32,17 +32,17 @@ export default class InsertElement extends Vue {
   values = [
     {
       id: "page-1",
-      tabLabel: "Page One",
+      tabLabel: "Page1",
       tabContent: "Label"
     },
     {
       id: "page-2",
-      tabLabel: "Page Two",
+      tabLabel: "Page2",
       tabContent: "ToggleButton",
     },
     {
       id: "page-3",
-      tabLabel: "Page Three",
+      tabLabel: "Page3",
       tabContent: "OptionButton",
     },
   ];
@@ -60,6 +60,11 @@ export default class InsertElement extends Vue {
     const scrollRef = (this as any).$refs.scrolling;
     console.log(scrollRef);
     scrollRef.scrollLeft += 60;
+  }
+  mounted(){
+    const ele: any= document.getElementsByName("page-group-1");
+    console.log(ele);
+    ele[0].checked = true;
   }
 }
 </script>
@@ -134,7 +139,7 @@ export default class InsertElement extends Vue {
   border: 0.1px solid white;
   background-color: rgb(238, 238, 238);
   display: inline-block;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 1px 5px;
   margin: 0;
   cursor: pointer;
   position: relative;

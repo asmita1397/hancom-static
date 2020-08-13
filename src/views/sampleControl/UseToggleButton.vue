@@ -1,26 +1,16 @@
 <template>
   <div>
-    
-   
-    
-              <button class="toggle-button">Toggle Button</button>
-         
+      <button class="toggle-button">Toggle Button</button>
+
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      clicked: false
-    };
-  },
-  methods: {
-    toSelect() {
-      this.clicked = !this.clicked;
-    }
-  }
-};
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+@Component({
+  components: {}
+})
+export default class UseToggleButton extends Vue {}
 </script>
 
 <style scoped>

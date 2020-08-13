@@ -120,6 +120,8 @@ export default class UserFormPropertiesList extends Vue {
 
 <style scoped>
 .sideheader1 {
+   display: grid;
+  grid-template-columns: 1fr 25px;
   background-color: rgb(142, 191, 231);
   margin-bottom: 8px;
   text-overflow: ellipsis;

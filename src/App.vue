@@ -38,7 +38,7 @@
             </Split>
           </SplitArea>
 
-          <SplitArea :size="70" style="background:gray;">
+          <SplitArea :size="70" style="background:gray;oveflow:hidden;">
             <div style="position:relative;">
               <UserForm1 v-if="display==='userForm1'" />
               <UserForm2 v-else-if="display==='userForm2'" />
@@ -128,6 +128,8 @@ export default class App extends Vue {
   border: 1px solid grey;
 }
 .sideheader1 {
+  display: grid;
+  grid-template-columns: 1fr 25px;
   /* width: 250px; */
   background-color: rgb(142, 191, 231);
   margin-bottom: 8px;

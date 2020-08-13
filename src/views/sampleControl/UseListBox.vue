@@ -13,14 +13,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      liContent: ["MBA", "MCA", "MSC", "MESC", "CA"],
-    };
-  },
-};
+
+
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+@Component({
+  components: {}
+})
+export default class UseListBox extends Vue {
+  liContent= ["MBA", "MCA", "MSC", "MESC", "CA"]
+}
 </script>
 
 <style scoped>

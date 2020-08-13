@@ -6,8 +6,12 @@
     </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+@Component({
+  components: {}
+})
+export default class UseComboBox extends Vue {}
 </script>
 
 <style scoped>
