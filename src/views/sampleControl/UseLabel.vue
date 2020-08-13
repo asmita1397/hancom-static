@@ -37,5 +37,7 @@ export default class UseLabel extends Vue {
   padding-left:2px;
   
 }
-
+:focus{
+  outline:none;
+}
 </style>

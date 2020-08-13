@@ -6,7 +6,7 @@
           <img src="../assets/userform/OuterWindow.png" style="width:12px;height:12px" />
         </div>
         <div>
-          <span style="margin-left: 5px;">Book1 - UserForm2 (UserForm)</span>
+                    <span style="margin-left: 5px;text-overflow: ellipsis;white-space: nowrap; overflow: hidden;">Book1 - UserForm2 (UserForm)</span>
         </div>
         <div>
           <div class="outer-window-button">
@@ -105,11 +105,11 @@ export default class UserForm2 extends Vue {
   outline-style: auto;
   position: absolute;
   border: 5px solid rgb(180, 211, 252);
-  width: 800px;
-  height: 400px;
+  width: 98.7%;
+  height: 507px;
   border-radius: 5px;
-  top:50px;
-  left:30px;
+ /*  top:50px;
+  left:30px; */
   font-size: 14px;
   font-family: Tahoma;
   font-weight: 200;

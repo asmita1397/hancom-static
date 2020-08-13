@@ -6,13 +6,14 @@
       </div>
       <div class="mainbody">
         <Split class="outersplit">
-          <SplitArea :size="25" class="splitleft">
+          
+          <SplitArea :size="20" class="splitleft">
             <Split :direction="vertical">
               <SplitArea class="innersplit">
                 <div v-if="noDisplayTree===false">
                   <div class="sideheader">
                     <span class="sideheader1">
-                      <span>Project - VBAProject</span>
+                      <span >Project - VBAProject</span>
                       <div id="mdiv" v-on:click="noDisplayTreeBrowser">
                         <div class="mdiv">
                           <div class="md"></div>
@@ -36,26 +37,16 @@
               </SplitArea>
             </Split>
           </SplitArea>
-          <SplitArea :size="65" style="background:gray;">
-            <div style="position:relative;">
-              <!-- <div style="display:-webkit-inline-box">
-                <div class="dialog-action-div" @click="()=>{ display='userForm1'}">
-                  <button class="dialog-action-button">UserForm1</button>
-                </div>
-                <div class="dialog-action-div" @click="()=>{ display='userForm2'}">
-                  <button class="dialog-action-button">UserForm2</button>
-                </div>
-                <div class="dialog-action-div" @click="()=>{ display='userForm3'}">
-                  <button class="dialog-action-button">UserForm3</button>
-                </div>
-              </div> -->
 
+          <SplitArea :size="70" style="background:gray;">
+            <div style="position:relative;">
               <UserForm1 v-if="display==='userForm1'" />
               <UserForm2 v-else-if="display==='userForm2'" />
               <UserForm3 v-else-if="display==='userForm3'" />
               <UserForm4 v-else-if="display==='userForm4'" />
             </div>
           </SplitArea>
+
           <SplitArea :size="10">
             <ToolBox />
           </SplitArea>

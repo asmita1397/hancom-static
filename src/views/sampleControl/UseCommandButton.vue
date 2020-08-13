@@ -70,4 +70,7 @@ export default class UseCommandButton extends Vue {
     position: absolute;
     top: 20px;
     }
+:focus{
+  outline:none;
+}
 </style>

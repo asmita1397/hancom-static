@@ -36,4 +36,7 @@ export default class UseFrame extends Vue {}
     overflow: hidden;
     text-align: initial;
 }
+:focus{
+  outline:none;
+}
 </style>

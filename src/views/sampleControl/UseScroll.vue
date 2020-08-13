@@ -10,10 +10,14 @@ export default {};
 
 <style scoped>
 .outer-scroll {
-  border: none;
-  height: 100px;
-  width: 90px;
-  overflow-y: scroll;
+ border: none;
+    height: 126px;
+    width: 60px;
+    overflow-y: scroll;
+    position: relative;
+    top: 29px;
+    left:50px;
+
 }
 
 .inner-scroll {
@@ -22,7 +26,7 @@ export default {};
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 50px;
   height: 1em;
   background-color: rgb(238, 238, 238);
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="picture">
-    <img src="../../assets/controls-pictures/checkmark.png" />
+    <img  class="img-style" src="../../assets/controls-pictures/checkmark.png" width="20" height="20" />
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {};
 </script>
 
 <style scoped>
+.img-style{
+  position: absolute;
+    top: 40%;
+    left: 40%;
+}
 .picture {
       position: relative;
     height: 100px;
@@ -20,5 +25,8 @@ export default {};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+:focus{
+  outline:none;
 }
 </style>

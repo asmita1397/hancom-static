@@ -1,103 +1,226 @@
 <template>
-  <div class="pages">
-    <div class="outer-multi">
-      <div class="page">
-        <input type="radio" id="page-1" name="page-group-2" checked />
-        <label for="page-1">Page1</label>
-        <div class="content1">
-          <UseCommandButton />
-          <!-- <UseCheckBox /> -->
+  <div class="outer-page" :style="outerArea">
+    <div class="pages">
+      <div id="container" class="move" ref="scrolling">
+        <div class="page" v-for="(value,key) in values" :key="key">
+          <input name="page-group-1" :id="value.id" type="radio" />
+          <label :for="value.id">{{value.tabLabel}}</label>
+          <div class="content"><UseLabel v-if="value.tabContent==='Label'"/><UseToggleButton v-if="value.tabContent==='ToggleButton'"/><UseOptionButton v-if="value.tabContent==='OptionButton'"/></div>
         </div>
       </div>
-      <div class="page">
-        <input type="radio" id="page-2" name="page-group-2" />
-        <label for="page-2">Page2</label>
-        
-        <div class="content1">
-          <div>
-          <!-- <UseOptionButton /> -->
-          <UseCheckBox />
-          </div>
-          </div>
+      <div></div>
+      <div :style="{display:isScroll?'block':'none'}">
+        <button class="left-button" @click="leftmove"></button>
+        <button class="right-button" @click="rightmove"></button>
       </div>
     </div>
   </div>
 </template>
 
-
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import UseCommandButton from './UseCommandButton.vue';
-// import UseOptionButton from './UseOptionButton.vue';
-import UseCheckBox from './UseCheckBox.vue'
-
+import { Component, Vue, Prop } from "vue-property-decorator";
+import UseLabel from './UseLabel.vue';
+import UseOptionButton from './UseOptionButton.vue';
+import UseToggleButton from './UseToggleButton.vue'
 @Component({
-  components: {
-    UseCommandButton,
-    // UseOptionButton,
-    UseCheckBox
-
-  },
+  components: {UseLabel,UseToggleButton,UseOptionButton},
 })
-export default class UseMultiPage extends Vue {}
+export default class InsertElement extends Vue {
+    isScroll=true
+    outerArea={width: '200px',
+  height: '140px'}
+  values = [
+    {
+      id: "page-1",
+      tabLabel: "Page One",
+      tabContent: "Label"
+    },
+    {
+      id: "page-2",
+      tabLabel: "Page Two",
+      tabContent: "ToggleButton",
+    },
+    {
+      id: "page-3",
+      tabLabel: "Page Three",
+      tabContent: "OptionButton",
+    },
+  ];
+
+  leftmove() {
+    const scrollRef = (this as any).$refs.scrolling;
+    console.log(scrollRef.scrollWidth+30);
+    scrollRef.scrollLeft -= 60;
+    /* if(scrollRef.scrollWidth+30<=parseInt(this.outerArea.width)){
+        this.isScroll=false
+    } */
+  }
+  rightmove() {
+    console.log("right");
+    const scrollRef = (this as any).$refs.scrolling;
+    console.log(scrollRef);
+    scrollRef.scrollLeft += 60;
+  }
+}
 </script>
 
 <style scoped>
-.outer-multi {
-  position: absolute;
-  /* border: 1px solid black; */
+.outer-page {
   background-color: rgb(238, 238, 238);
-  width: calc(100% - 396px);
-  height: calc(100% - 30px);
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-
 .pages {
+  display: grid;
+  grid-template-columns: 1fr 40px 30px;
   position: relative;
-  min-height: 150px;
   clear: both;
-  margin: 25px 0;
+  margin: 0;
+  /* margin-left: 10px; */
+  width: calc(100%);
+  height: calc(100% + 22px);
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.left-button {
+  position: relative;
+  background-image: url("../../assets/controls-pictures/left-arrow-img.png");
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid gray;
+  top: 3px;
+  right: 19px;
+  width: 22px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+.right-button {
+  position: relative;
+  background-image: url("../../assets/controls-pictures/right-arrow-img.png");
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid gray;
+  top: 3px;
+  right: 19px;
+  width: 22px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  z-index: 5;
+}
+.move {
+  height: -webkit-fill-available;
+  width: 100%;
+  display: inline-block;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .page {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 1;
+}
+.scroll-page {
+  z-index: 2;
 }
 .page label {
-  background: rgb(238, 238, 238);
-  border: 1px solid rgb(238, 238, 238);
-  margin-left: -1px;
+  border: 0.1px solid white;
+  background-color: rgb(238, 238, 238);
+  display: inline-block;
+  padding: 5px 5px 5px 5px;
+  margin: 0;
+  cursor: pointer;
   position: relative;
-  left: 1px;
-  padding: 0px 7px 0px 7px;
-  border-radius: 2px;
 }
 .page [type="radio"] {
   display: none;
 }
-.content1 {
+::-webkit-scrollbar {
+  width: 0;
+  height: 1em;
+  background-color: rgb(238, 238, 238);
+}
+
+::-webkit-scrollbar-button {
+  background: rgb(238, 238, 238);
+  height: 20px;
+  border: 1px solid lightgray;
+  border-right-color: gray;
+  border-bottom-color: gray;
+}
+
+/* Up */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("../../assets/controls-pictures/triangle-up-img.png");
+  transform: rotate(90deg);
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* border-color: lightgrey; */
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("../../assets/controls-pictures/triangle-down-img.png");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* border-color: lightgrey; */
+}
+
+::-webkit-scrollbar-track-piece {
+  width: 0px;
+}
+
+/* ::-webkit-scrollbar-thumb {
+        background: #eee;
+        border: 1px solid lightgray;
+        border-right-color: gray;
+        border-bottom-color: gray;
+    } */
+.page .content {
   position: absolute;
-  top: 18px;
-  left: 0;
-  /* background: transparent; */
+  white-space: normal;
+  top: 23px;
+  left: 0px;
+  /* background: rgb(238, 238, 238); */
   background-color: white;
   background-size: 9px 10px;
-  background-image: radial-gradient(circle, rgb(0, 0, 0) 0.5px, rgba(0, 0, 0, 0) 0.2px);
-  width: calc(100% - 42px);
-  height: calc(100% - 60px);
+  background-image: radial-gradient(
+    circle,
+    rgb(0, 0, 0) 0.5px,
+    rgba(0, 0, 0, 0) 0.2px
+  );
+  height: 100px;
+  right: 0;
+  bottom: 0;
   padding: 20px;
-  /* border: 1px solid rgb(238, 238, 238); */
-  border-top: 0.1px solid white;
-  border-radius: 1px;
-  box-shadow: 1px 1px grey;
-      overflow: hidden;
+  padding-right: 10px;
+  width: calc(100% - 35px);
+  height: calc(100% - 89px);
+  border: 0.1px solid white;
+  box-shadow: 2px 1px gray;
 }
-[type="radio"]:checked ~ label {
-  background: ccc;
-  box-shadow: 2px 0px gray;
-  border: 0.5px solid white;
-  border-bottom: 1px solid ccc;
+.page [type="radio"]:checked ~ label {
+  border-right: 2px solid gray;
+  border-bottom: none;
+  border-radius: 3px;
   z-index: 2;
 }
-[type="radio"]:checked ~ label ~ .content1 {
+.page [type="radio"]:checked ~ label ~ .content {
   z-index: 1;
+}
+.content {
+  overflow: auto;
+}
+:focus{
+  outline:none;
 }
 </style>

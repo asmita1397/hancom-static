@@ -35,7 +35,6 @@ export default class UseCommandButton3 extends Vue {
 }
 .commandbutton {
  width: 132px;
-   
     height: 40px;
   border: none;
   box-shadow: 2px 2px gray;

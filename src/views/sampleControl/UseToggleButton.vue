@@ -1,19 +1,10 @@
 <template>
   <div>
-    <div class="toggle-border" v-if="clicked===false" @click="toSelect">
-      <button class="toggle-button">Toggle Button</button>
-    </div>
-    <div class="toggle-border" v-else @click="toSelect">
-      <a class="span4">
-        <a class="span3">
-          <a class="span2">
-            <a class="span1">
+    
+   
+    
               <button class="toggle-button">Toggle Button</button>
-            </a>
-          </a>
-        </a>
-      </a>
-    </div>
+         
   </div>
 </template>
 
@@ -38,25 +29,5 @@ export default {
   width: 55px;
   box-shadow: 1px 1px gray;
   overflow: hidden;
-}
-.span1 {
-  outline: dotted 1.5px black;
-  outline-offset: 3px;
-  width: auto;
-}
-.span2 {
-  outline: dotted 1.5px black;
-  outline-offset: 4px;
-  width: auto;
-}
-.span3 {
-  outline: dotted 1.5px black;
-  outline-offset: 4px;
-  width: auto;
-}
-.span4 {
-  outline: dotted 1.5px black;
-  outline-offset: 5px;
-  width: auto;
 }
 </style>

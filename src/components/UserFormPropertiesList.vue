@@ -3,42 +3,31 @@
     <div>
       <div class="sideheader">
         <span class="sideheader1">
-          Properties -
-          <!--  {{this.selectedUserForm && this.selectedUserForm.property.name}} -->
-          <!--  <button style="float:right" v-on:click="noDisplayTable">
-            <b>X</b>
-          </button>-->
-         
-          <div id="mdiv"  v-on:click="noDisplayTable">
+          <span>Project - VBAProject</span>
+          <div id="mdiv" v-on:click="noDisplayTable">
             <div class="mdiv">
               <div class="md"></div>
             </div>
           </div>
-         
-
         </span>
       </div>
     </div>
     <div class="form-group">
       <label for="userForm"></label>
 
-      <select class="form-control" name="selectedUserForm" id="selectedUserForm" > 
+      <select class="form-control" name="selectedUserForm" id="selectedUserForm">
+        <option>UserForm1 UserForm</option>
+        <option>Label1 Label</option>
+        <option>CommandButton1 CommandButton</option>
 
-
-        <option >UserForm1 UserForm</option>
-        <option >Label1 Label</option>
-         <option  >CommandButton1 CommandButton</option>
-
-        <option >UserForm2 UserForm</option>
-         <option>Label2 Label</option>
+        <option>UserForm2 UserForm</option>
+        <option>Label2 Label</option>
         <option>CommandButton2 CommandButton</option>
-        <option>TextBox1  TextBox</option>
+        <option>TextBox1 TextBox</option>
 
-        <option  >UserForm3 UserForm</option>
-         <option  >CheckBox1 CheckBox</option>
-        <option >ListBox1 ListBox</option>
-      
-        
+        <option>UserForm3 UserForm</option>
+        <option>CheckBox1 CheckBox</option>
+        <option>ListBox1 ListBox</option>
       </select>
 
       <UserFormTable v-if="userFormType==='userForm1'" :userFormData="userForm1" />
@@ -83,8 +72,6 @@ import TextBoxTable from "./TextBoxTable.vue";
 import CheckBoxControlTable from "./CheckBoxControlTable.vue";
 import { ListBox } from "../models/ListBox";
 import ListControlTable from "./ListControlTable.vue";
-
-
 
 @Component({
   components: {
@@ -133,10 +120,11 @@ export default class UserFormPropertiesList extends Vue {
 
 <style scoped>
 .sideheader1 {
-  top: 0%;
-  width: 250px;
-  background-color: #99b4d1;
+  background-color: rgb(142, 191, 231);
   margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .sideheader {
   height: 22px;
@@ -151,34 +139,34 @@ export default class UserFormPropertiesList extends Vue {
   background-color: white;
 }
 #mdiv {
-float: right;
-    margin: initial;
-    position: relative;
-    top: 0px;
-    width: 20px;
-    height: 16px;
-    background-color: lightgray;
-    border: outset;
+  float: right;
+  margin: initial;
+  position: relative;
+  top: 0px;
+  width: 20px;
+  height: 16px;
+  background-color: lightgray;
+  border: outset;
 }
 
 .mdiv {
- height: 17px;
-    width: 2px;
-    margin-left: 60px;
-    background-color: black;
-    transform: rotate(45deg);
-    z-index: 1;
-    position: absolute;
-    right: 8px;
+  height: 17px;
+  width: 2px;
+  margin-left: 60px;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: 1;
+  position: absolute;
+  right: 8px;
 }
 
 .md {
-      height: 17px;
-    width: 2px;
-    background-color: black;
-    transform: rotate(90deg);
-    z-index: 2;
-    position: absolute;
-    right: 0px;
+  height: 17px;
+  width: 2px;
+  background-color: black;
+  transform: rotate(90deg);
+  z-index: 2;
+  position: absolute;
+  right: 0px;
 }
 </style>

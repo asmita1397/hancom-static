@@ -19,4 +19,7 @@ export default {};
      width: 115px;
     height: 30px;
 }
+:focus{
+  outline:none;
+}
 </style>

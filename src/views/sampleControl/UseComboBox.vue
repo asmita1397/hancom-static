@@ -66,4 +66,7 @@ export default {};
   pointer-events: none;
   z-index: 1;
 }
+:focus{
+  outline:none;
+}
 </style>

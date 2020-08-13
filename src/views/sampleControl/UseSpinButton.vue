@@ -16,10 +16,11 @@ export default class UseSpinButton extends Vue {
   transform:'rotate(0deg)'}
   handleClick(){
     this.spinStyle.width='61px';
-    if(this.spinStyle.width>this.spinStyle.height){
+   /*  if(this.spinStyle.width>this.spinStyle.height){
 
       this.spinStyle.transform='rotate(90deg)';
-    }
+    } */
+
   }
 }
 </script>
@@ -45,5 +46,8 @@ export default class UseSpinButton extends Vue {
   background-position: center;
   background-repeat: no-repeat;
   border-color: lightgrey;
+}
+:focus{
+  outline:none;
 }
 </style>

@@ -6,7 +6,9 @@
           <img src="../assets/userform/OuterWindow.png" style="width:12px;height:12px" />
         </div>
         <div>
-          <span style="margin-left: 5px;">Book1 - UserForm4 (UserForm)</span>
+          <span style="margin-left: 5px;text-overflow: ellipsis;white-space: nowrap; overflow: hidden;">
+            Book1 - UserForm4 (UserForm)
+          </span>
         </div>
         <div>
           <div class="outer-window-button">
@@ -33,15 +35,7 @@
         </div>
       </div>
       <div class="outer-userform-body">
-        <div :class="[innerWindowFocused?'inner-window-border':null]">
-          <div v-if="innerWindowFocused" class="handle handle-tl"></div>
-          <div v-if="innerWindowFocused" class="handle handle-tr"></div>
-          <div v-if="innerWindowFocused" class="handle handle-tm"></div>
-          <div v-if="innerWindowFocused" class="handle handle-ml"></div>
-          <div v-if="innerWindowFocused" class="handle handle-mr"></div>
-          <div v-if="innerWindowFocused" class="handle handle-bl"></div>
-          <div v-if="innerWindowFocused" class="handle handle-br"></div>
-          <div  v-if="innerWindowFocused" class="handle handle-bm"></div>
+        
         <div class="inner-userform-window" :style="{margin:innerWindowFocused?'': '5px'}">
           <div class="inner-userform-header">
             <div>
@@ -62,7 +56,7 @@
                <UserFormControl4/>
           </div>
          
-        </div>
+       
         </div>
         
       </div>
@@ -106,11 +100,9 @@ export default class UserForm4 extends Vue {
   outline-style: auto;
   position: absolute;
   border: 5px solid rgb(180, 211, 252);
-  width: 800px;
-  height: 400px;
+  width: 98.8%;
+  height: 507px;
   border-radius: 5px;
- top:50px;
-  left:30px;
   font-size: 14px;
   font-family: Tahoma;
   font-weight: 200;
@@ -135,8 +127,8 @@ export default class UserForm4 extends Vue {
   outline-style: auto;
   position: relative;
   border: 5px solid rgb(180, 211, 252);
-  width: 600px;
-  height:300px;
+  width:920px;
+  height:455px;
   border-radius: 5px;
   overflow:hidden;
 }

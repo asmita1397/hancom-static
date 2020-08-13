@@ -35,7 +35,7 @@ export default class UseCommandButton2 extends Vue {
 
 <style scoped>
 .commandbutton {
-  width: 80px;
+  width: 150px;
     height: 50px;
   border: none;
   box-shadow: 2px 2px gray;
@@ -47,7 +47,7 @@ export default class UseCommandButton2 extends Vue {
   outline: none;
 }
 .mainDiv {
-    width: 80px;
+    width: 150px;
     height: 50px;
     position:absolute;
    left: 339px;

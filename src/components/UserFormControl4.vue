@@ -14,39 +14,49 @@
   <div class="column1">
   <UseComboBox/>
   </div>
+  <div class="column1">
+ <UseOptionButton/>
+  </div>
 </div>
+
+<div class="row3">
+ <div class="column3" style=" position: relative;top: 59px;">
+   <UseCommandButton/>
+  </div>
+ 
+  <div class="column3" >
+   <UseScroll/>
+  </div>
+  <div class="column3" style=" position: relative;top: 59px;">
+   <UseToggleButton/>
+  </div>
+  <div class="column3" style=" position: relative;top: 59px;">
+   <UseSpinButton/>
+  </div>
+   <div class="column3">
+   <UseTabStrip/>
+  </div>
+
+</div>
+
 <div class="row2">
   <div class="column2" >
     <UseFrame/>
   </div>
-  <div class="column2" style="margin-left: 27px;">
+  <div class="column2" >
    <UseListBox/>
   </div>
   <div class="column2">
-    <UseScroll/>
-  </div>
-  <div class="columnLastTab2">
-  
-   <UsePicture/>
-  </div>
- 
-</div>
-<div class="row3">
-  <div class="column3" >
-    <UseOptionButton/>
-  </div>
-  <div class="column3">
-   <UseToggleButton/>
-  </div>
-  <div class="column3">
-   <UseSpinButton/>
-  </div>
-   <div class="column3">
-   <UseCommandButton/>
-  </div>
+  <UsePicture/>
    
+  </div>
+  <div class="column2" >
+    <UseMultiPage/>
+  </div>
  
 </div>
+
+
   
     
     
@@ -103,7 +113,7 @@ export default class UserFormControl4 extends Vue {
 .column1 {
   text-align: center;
   float: left;
-  width: 21%;
+  width: 17%;
   height: 30px;
   padding:10px; 
 }
@@ -119,19 +129,12 @@ export default class UserFormControl4 extends Vue {
 .column2 {
   text-align: center;
   float: left;
-  width: 21%;
+  width: 20%;
   height:120px;
   padding:10px; 
 }
 
-.columnLastTab2
-{
-  padding:0px;
-  width: 10px;
-  height:120px;
-  float: left;
-  
-}
+
 
 .row2:after {
   content: "";
@@ -141,8 +144,8 @@ export default class UserFormControl4 extends Vue {
 .column3 {
   text-align: center;
   float: left;
-  width: 21%;
-  height: 30px;
+  width: 17%;
+  height: 160px;
   padding:10px; 
 }
 
@@ -152,6 +155,8 @@ export default class UserFormControl4 extends Vue {
   display: table;
   clear: both;
 }
+
+
 </style>
 
 
