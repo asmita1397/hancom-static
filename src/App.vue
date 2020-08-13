@@ -38,7 +38,7 @@
             </Split>
           </SplitArea>
 
-          <SplitArea :size="70" style="background:gray;oveflow:hidden;">
+          <SplitArea :size="70" style="background:gray;overflow:hidden;">
             <div style="position:relative;">
               <UserForm1 v-if="display==='userForm1'" />
               <UserForm2 v-else-if="display==='userForm2'" />
